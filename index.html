@@ -79,7 +79,7 @@
 
   nav{position:sticky;top:0;z-index:40;background:rgba(247,247,247,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{font-weight:800;font-size:18px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+  .logo{font-weight:800;font-size:18px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none}
   .logo .mark{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--purple));color:#fff;display:grid;place-items:center;font-size:14px;font-weight:800}
   .nav-links{display:flex;gap:26px;font-size:14px;color:var(--ink-2)}
   .nav-links a:hover{color:var(--ink)}
@@ -98,7 +98,7 @@
   .pill.p{background:var(--tint-purple);border-color:#ddd2ff;color:#5b3ed6}
   .pill.g{background:var(--tint-mint);border-color:#c3f0d9;color:#0a7a4a}
   .hero h1{max-width:15ch;margin:0 auto 22px}
-  .hero h1 em{font-family:'Instrument Serif';font-style:italic;font-weight:400;background:linear-gradient(120deg,var(--accent),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero h1 em{font-family:'Instrument Serif';font-style:italic;font-weight:400;background:linear-gradient(120deg,var(--accent),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.16em}
   .hero .sub{max-width:46ch;margin:0 auto 26px;font-size:17px;color:#4a4a4a}
   .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
   .microtrust{margin-top:16px;font-size:13px;color:var(--ink-3);font-family:'Fragment Mono',monospace}
@@ -110,7 +110,8 @@
   .mic{flex:none;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--amber));display:grid;place-items:center;font-size:26px;box-shadow:0 8px 20px rgba(255,92,138,.35)}
   .voicehook h3{font-size:20px;margin-bottom:4px}
   .voicehook p{font-size:14px}
-  .wave{display:flex;gap:3px;align-items:center;margin:16px 0}
+  .wave{display:flex;gap:3px;align-items:center;justify-content:center;margin:16px 0}
+  .voicehook>.btn-primary{display:block;width:max-content;max-width:100%;margin:0 auto}
   .wave i{display:block;width:4px;border-radius:3px;background:var(--accent);animation:w 1s ease-in-out infinite}
   .wave i:nth-child(odd){background:var(--purple)}
   @keyframes w{0%,100%{height:8px}50%{height:26px}}
@@ -282,8 +283,11 @@
 
   footer{border-top:1px solid var(--line);padding:40px 0;color:var(--ink-3);font-size:14px}
   .foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .foot-links a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid transparent;transition:.2s}
+  .foot-links a:hover{color:var(--accent);border-bottom-color:var(--accent)}
 
-  .sticky{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:12px 0}
+  .sticky{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:12px 0;transition:transform .35s ease,opacity .35s ease}
+  .sticky.hide{transform:translateY(120%);opacity:0;pointer-events:none}
   .sticky-in{display:flex;align-items:center;justify-content:space-between;gap:16px}
   .sticky .txt{font-size:14px;font-weight:600}
   .sticky .txt span{color:var(--ink-2);font-weight:400}
@@ -319,7 +323,7 @@
 <!-- NAV -->
 <nav>
   <div class="wrap nav-in">
-    <div class="logo"><span class="mark">И</span>AI&nbsp;під&nbsp;ключ</div>
+    <div class="logo" onclick="logoClick()" role="button" tabindex="0" aria-label="На початок"><span class="mark">⚡</span>AI&nbsp;під&nbsp;ключ</div>
     <div class="nav-links">
       <a href="#try">Спробувати</a>
       <a href="#formats">Формати</a>
@@ -626,7 +630,7 @@
 <footer>
   <div class="wrap foot-in">
     <div>© 2026 · Євгенія · AI під ключ</div>
-    <div>Telegram · Пошта · Політика конфіденційності</div>
+    <div class="foot-links"><a href="https://t.me/ai_lifechanger_bot" target="_blank" rel="noopener">Telegram</a></div>
   </div>
 </footer>
 
@@ -652,6 +656,24 @@
 <script>
   function openQuiz(){document.getElementById('quiz').classList.add('on');document.body.style.overflow='hidden'}
   function closeQuiz(){document.getElementById('quiz').classList.remove('on');document.body.style.overflow=''}
+
+  // Логотип: вгорі сторінки — перезавантажити; якщо проскролено — плавно нагору
+  function logoClick(){
+    if(window.scrollY < 40){ location.reload(); }
+    else { window.scrollTo({top:0,behavior:'smooth'}); }
+  }
+  document.querySelector('.logo')?.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); logoClick(); }
+  });
+
+  // Плаваючий бар ховається, коли видно фінальний блок (щоб не дублювати футер)
+  (function(){
+    var sticky=document.querySelector('.sticky'), fin=document.querySelector('.final');
+    if(!sticky||!fin||!('IntersectionObserver' in window))return;
+    new IntersectionObserver(function(en){
+      sticky.classList.toggle('hide', en[0].isIntersecting);
+    },{rootMargin:'0px 0px -10% 0px'}).observe(fin);
+  })();
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeQuiz()});
 </script>
 </body>
