@@ -323,6 +323,11 @@
     .shead{margin-bottom:32px}
     .voicehook{padding:22px}
   }
+  .nav-right{display:flex;align-items:center;gap:10px}
+  .langsw{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+  .langsw button{border:none;background:transparent;font-family:'Fragment Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.04em;padding:7px 11px;cursor:pointer;color:var(--ink-3);transition:.15s;line-height:1}
+  .langsw button.on{background:var(--accent);color:#fff}
+  @media(max-width:420px){.langsw button{padding:6px 9px;font-size:11px}}
 </style>
 </head>
 <body>
@@ -330,15 +335,15 @@
 <!-- NAV -->
 <nav>
   <div class="wrap nav-in">
-    <div class="logo" onclick="logoClick()" role="button" tabindex="0" aria-label="На початок"><span class="mark">⚡</span>AI&nbsp;під&nbsp;ключ</div>
+    <div class="logo" onclick="logoClick()" role="button" tabindex="0" aria-label="На початок"><span class="mark">⚡</span><span data-k="logo">AI&nbsp;під&nbsp;ключ</span></div>
     <div class="nav-links">
-      <a href="#try">Спробувати</a>
-      <a href="#formats">Формати</a>
-      <a href="#solutions">Можливості</a>
-      <a href="#process">Як працюємо</a>
-      <a href="#pricing">Тарифи</a>
+      <a href="#try"><span data-k="nav_try">Спробувати</span></a>
+      <a href="#formats"><span data-k="w_formaty">Формати</span></a>
+      <a href="#solutions"><span data-k="nav_solutions">Можливості</span></a>
+      <a href="#process"><span data-k="nav_process">Як працюємо</span></a>
+      <a href="#pricing"><span data-k="w_tarify">Тарифи</span></a>
     </div>
-    <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg">Відкрити в Telegram</a>
+    <div class="nav-right"><div class="langsw" role="group" aria-label="Мова / Язык"><button type="button" data-lang="ua" class="on" onclick="setLang('ua')">UA</button><button type="button" data-lang="ru" onclick="setLang('ru')">RU</button></div><a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg" data-k="nav_tg">Відкрити в Telegram</a></div>
   </div>
 </nav>
 
@@ -346,32 +351,32 @@
 <header class="hero">
   <div class="wrap">
     <div class="badges">
-      <span class="pill b">🤖 Нейро-співробітники</span>
-      <span class="pill p">⚡ Запуск за 2–4 тижні</span>
+      <span class="pill b"><span data-k="badge1">🤖 Нейро-співробітники</span></span>
+      <span class="pill p"><span data-k="badge2">⚡ Запуск за 2–4 тижні</span></span>
       <span class="pill g">💬 Telegram · Instagram · WhatsApp</span>
     </div>
-    <h1>AI-співробітник, який працює <em>24/7</em> і не звільняється</h1>
-    <p class="sub">Відповідає клієнтам, продає, веде CRM. Я, Євгенія, впроваджу його у ваш бізнес за 2–4 тижні — від $500.</p>
+    <h1 data-k="hero_h1">AI-співробітник, який працює <em>24/7</em> і не звільняється</h1>
+    <p class="sub"><span data-k="hero_sub">Відповідає клієнтам, продає, веде CRM. Я, Євгенія, впроваджу його у ваш бізнес за 2–4 тижні — від $500.</span></p>
     <div class="hero-cta">
-      <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg btn-lg">🎤 Записати голосове про свій бізнес →</a>
-      <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-ghost btn-lg">Порахувати економію</a>
+      <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg btn-lg"><span data-k="cta1">🎤 Записати голосове про свій бізнес →</span></a>
+      <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-ghost btn-lg"><span data-k="cta2">Порахувати економію</span></a>
     </div>
-    <div class="microtrust">Безкоштовно · відповідь за хвилину · прямо в Telegram</div>
+    <div class="microtrust"><span data-k="microtrust">Безкоштовно · відповідь за хвилину · прямо в Telegram</span></div>
 
     <!-- VOICE HOOK -->
     <div class="voicehook">
       <div class="row">
         <div class="mic">🎤</div>
         <div>
-          <h3>Розкажи про свій бізнес — голосом</h3>
-          <p>Запиши голосове: чим займаєшся і що «болить». AI одразу скаже, що автоматизувати. Далі підключусь я.</p>
+          <h3><span data-k="vh_h3">Розкажи про свій бізнес — голосом</span></h3>
+          <p><span data-k="vh_p">Запиши голосове: чим займаєшся і що «болить». AI одразу скаже, що автоматизувати. Далі підключусь я.</span></p>
         </div>
       </div>
       <div class="wave">
         <i style="animation-delay:0s"></i><i style="animation-delay:.1s"></i><i style="animation-delay:.2s"></i><i style="animation-delay:.3s"></i><i style="animation-delay:.15s"></i><i style="animation-delay:.25s"></i><i style="animation-delay:.05s"></i><i style="animation-delay:.35s"></i><i style="animation-delay:.2s"></i><i style="animation-delay:.1s"></i><i style="animation-delay:.3s"></i><i style="animation-delay:0s"></i>
       </div>
-      <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-primary">Надиктувати в Telegram →</a>
-      <div class="vh-note">Відкриється бот — там надиктуєш голосове й одразу отримаєш розбір 💬</div>
+      <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-primary"><span data-k="vh_btn">Надиктувати в Telegram →</span></a>
+      <div class="vh-note"><span data-k="vh_note">Відкриється бот — там надиктуєш голосове й одразу отримаєш розбір 💬</span></div>
     </div>
   </div>
 </header>
@@ -381,17 +386,17 @@
   <div class="wrap">
     <div class="statgrid">
       <div class="stats">
-        <div class="stat"><div class="num">24/7</div><div class="cap">бот працює без вихідних і обідів</div></div>
-        <div class="stat"><div class="num">15 сек</div><div class="cap">середня відповідь клієнту</div></div>
-        <div class="stat"><div class="num">−30%</div><div class="cap">навантаження на вас</div></div>
-        <div class="stat"><div class="num">2–4</div><div class="cap">тижні до запуску</div></div>
+        <div class="stat"><div class="num">24/7</div><div class="cap"><span data-k="stat1cap">бот працює без вихідних і обідів</span></div></div>
+        <div class="stat"><div class="num">15 сек</div><div class="cap"><span data-k="stat2cap">середня відповідь клієнту</span></div></div>
+        <div class="stat"><div class="num">−30%</div><div class="cap"><span data-k="stat3cap">навантаження на вас</span></div></div>
+        <div class="stat"><div class="num">2–4</div><div class="cap"><span data-k="stat4cap">тижні до запуску</span></div></div>
       </div>
       <!-- highlight card -->
       <div class="meme">
         <div class="photo" style="background:linear-gradient(135deg,var(--tint-mint),var(--tint-blue));color:var(--ink);font-size:46px">🚀</div>
         <div class="cap">
-          <b>Запуск за 2–4 тижні</b>
-          <span>Чіткий строк під ключ — без нескінченних «ще трохи».</span>
+          <b><span data-k="highlight_b">Запуск за 2–4 тижні</span></b>
+          <span><span data-k="highlight_span">Чіткий строк під ключ — без нескінченних «ще трохи».</span></span>
         </div>
       </div>
     </div>
@@ -403,18 +408,18 @@
   <div class="wrap">
     <div class="try">
       <div class="shead">
-        <span class="mono" style="color:#9aa0ff">Спробуй прямо зараз</span>
-        <h2 style="margin-top:14px">Не читай про AI — доторкнись до нього в Telegram</h2>
-        <p style="margin-top:12px">Перейди в бота й дай агенту реальну задачу. Він відповість за секунди — це і є демо того, що працюватиме у тебе.</p>
+        <span class="mono" style="color:#9aa0ff"><span data-k="try_eyebrow">Спробуй прямо зараз</span></span>
+        <h2 style="margin-top:14px"><span data-k="try_h2">Не читай про AI — доторкнись до нього в Telegram</span></h2>
+        <p style="margin-top:12px"><span data-k="try_p">Перейди в бота й дай агенту реальну задачу. Він відповість за секунди — це і є демо того, що працюватиме у тебе.</span></p>
       </div>
       <div class="try-cards">
-        <div class="tc"><span class="e">🎤</span><h4>Запиши голосове</h4><p>Розкажи задачу голосом — отримай розгорнуту відповідь текстом.</p></div>
-        <div class="tc"><span class="e">📈</span><h4>Попроси аналіз ринку</h4><p>Назви нішу — бот збере розбір і точки зростання.</p></div>
-        <div class="tc"><span class="e">📸</span><h4>Надішли фото</h4><p>Скинь товар, документ чи скрін — отримай допомогу по ньому.</p></div>
-        <div class="tc"><span class="e">🧠</span><h4>Опиши свій затик</h4><p>Розкажи, що «болить» у бізнесі — бот скаже, що автоматизувати.</p></div>
+        <div class="tc"><span class="e">🎤</span><h4><span data-k="tc1h">Запиши голосове</span></h4><p><span data-k="tc1p">Розкажи задачу голосом — отримай розгорнуту відповідь текстом.</span></p></div>
+        <div class="tc"><span class="e">📈</span><h4><span data-k="tc2h">Попроси аналіз ринку</span></h4><p><span data-k="tc2p">Назви нішу — бот збере розбір і точки зростання.</span></p></div>
+        <div class="tc"><span class="e">📸</span><h4><span data-k="tc3h">Надішли фото</span></h4><p><span data-k="tc3p">Скинь товар, документ чи скрін — отримай допомогу по ньому.</span></p></div>
+        <div class="tc"><span class="e">🧠</span><h4><span data-k="tc4h">Опиши свій затик</span></h4><p><span data-k="tc4p">Розкажи, що «болить» у бізнесі — бот скаже, що автоматизувати.</span></p></div>
       </div>
       <div class="try-cta">
-        <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg btn-lg">Відкрити бота й спробувати →</a>
+        <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg btn-lg"><span data-k="try_btn">Відкрити бота й спробувати →</span></a>
       </div>
     </div>
   </div>
@@ -424,16 +429,16 @@
 <section id="signs">
   <div class="wrap">
     <div class="shead">
-      <span class="mono">Діагностика</span>
-      <h2 style="margin-top:14px">5 ознак, що вам час впроваджувати AI</h2>
+      <span class="mono"><span data-k="signs_eyebrow">Діагностика</span></span>
+      <h2 style="margin-top:14px"><span data-k="signs_h2">5 ознак, що вам час впроваджувати AI</span></h2>
     </div>
     <div class="signs">
-      <div class="sign"><div class="x">✕</div><p>Рутина зʼїдає весь ваш день</p></div>
-      <div class="sign"><div class="x">✕</div><p>Ліди губляться: повільна відповідь, немає follow-up</p></div>
-      <div class="sign"><div class="x">✕</div><p>Підтримка і колл-центр перевантажені</p></div>
-      <div class="sign"><div class="x">✕</div><p>Менеджери зайняті рутиною замість продажів</p></div>
-      <div class="sign"><div class="x">✕</div><p>Конкуренти вже впроваджують AI, а ви — ще ні</p></div>
-      <div class="sign win"><div class="x">✓</div><p>Впізнали себе? Запишіть голосове — за хвилину скажу, що автоматизувати →</p></div>
+      <div class="sign"><div class="x">✕</div><p><span data-k="sign1">Рутина зʼїдає весь ваш день</span></p></div>
+      <div class="sign"><div class="x">✕</div><p><span data-k="sign2">Ліди губляться: повільна відповідь, немає follow-up</span></p></div>
+      <div class="sign"><div class="x">✕</div><p><span data-k="sign3">Підтримка і колл-центр перевантажені</span></p></div>
+      <div class="sign"><div class="x">✕</div><p><span data-k="sign4">Менеджери зайняті рутиною замість продажів</span></p></div>
+      <div class="sign"><div class="x">✕</div><p><span data-k="sign5">Конкуренти вже впроваджують AI, а ви — ще ні</span></p></div>
+      <div class="sign win"><div class="x">✓</div><p><span data-k="sign_win">Впізнали себе? Запишіть голосове — за хвилину скажу, що автоматизувати →</span></p></div>
     </div>
 
     <div class="memeband rev lav" style="margin-top:24px">
@@ -442,10 +447,10 @@
         <span style="display:none">📸 assets/meme-raccoon.jpg</span>
       </div>
       <div class="mb-text">
-        <span class="mono" style="color:var(--purple)">Мем у тему</span>
-        <h2 style="margin:12px 0;font-size:clamp(26px,3.6vw,40px)">Ваша реакція, коли порахували, скільки годин зʼїдає рутина</h2>
-        <p>Ручні відповіді, КП, звіти по ночах. Спочатку так реагуєш — потім віддаєш це боту.</p>
-        <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg" style="margin-top:18px">Порахувати мою рутину →</a>
+        <span class="mono" style="color:var(--purple)"><span data-k="mem_eyebrow">Мем у тему</span></span>
+        <h2 style="margin:12px 0;font-size:clamp(26px,3.6vw,40px)"><span data-k="mb1_h2">Ваша реакція, коли порахували, скільки годин зʼїдає рутина</span></h2>
+        <p><span data-k="mb1_p">Ручні відповіді, КП, звіти по ночах. Спочатку так реагуєш — потім віддаєш це боту.</span></p>
+        <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg" style="margin-top:18px"><span data-k="mb1_btn">Порахувати мою рутину →</span></a>
       </div>
     </div>
   </div>
@@ -455,19 +460,19 @@
 <section id="solutions">
   <div class="wrap">
     <div class="shead">
-      <span class="mono">Що я роблю</span>
-      <h2 style="margin-top:14px">Нейро-співробітники під реальні задачі</h2>
-      <p style="margin-top:12px">Конкретні процеси, які вже працюють у моїх клієнтів.</p>
+      <span class="mono"><span data-k="sol_eyebrow">Що я роблю</span></span>
+      <h2 style="margin-top:14px"><span data-k="sol_h2">Нейро-співробітники під реальні задачі</span></h2>
+      <p style="margin-top:12px"><span data-k="sol_p">Конкретні процеси, які вже працюють у моїх клієнтів.</span></p>
     </div>
     <div class="cards">
-      <div class="card"><div class="ico">💬</div><h3>AI-асистент продажів</h3><p>Відповідає 24/7, кваліфікує і не втрачає ліди.</p><div class="out">→ відповідь за 15 сек</div></div>
-      <div class="card"><div class="ico">🎧</div><h3>Нейро-підтримка</h3><p>Закриває звернення сама, складне — передає людині.</p><div class="out">→ −70% рутини</div></div>
-      <div class="card"><div class="ico">📄</div><h3>Документи в чаті</h3><p>КП, договори, презентації, PDF — прямо в чаті за секунди.</p><div class="out">→ 42 сек замість години</div></div>
-      <div class="card"><div class="ico">🔗</div><h3>Інтеграція з CRM</h3><p>Створює угоди, фіксує торкання, ставить задачі.</p><div class="out">→ CRM веде себе сама</div></div>
-      <div class="card"><div class="ico">📊</div><h3>Дані й аналітика</h3><p>Відповіді по прайсах і залишках, розбір реклами.</p><div class="out">→ рішення на цифрах</div></div>
-      <div class="card"><div class="ico">🧮</div><h3>Розрахунки й пошта</h3><p>Платежі, логістика, курси; розбір пошти.</p><div class="out">→ менше ручної роботи</div></div>
+      <div class="card"><div class="ico">💬</div><h3><span data-k="card1h">AI-асистент продажів</span></h3><p><span data-k="card1p">Відповідає 24/7, кваліфікує і не втрачає ліди.</span></p><div class="out"><span data-k="card1out">→ відповідь за 15 сек</span></div></div>
+      <div class="card"><div class="ico">🎧</div><h3><span data-k="card2h">Нейро-підтримка</span></h3><p><span data-k="card2p">Закриває звернення сама, складне — передає людині.</span></p><div class="out"><span data-k="card2out">→ −70% рутини</span></div></div>
+      <div class="card"><div class="ico">📄</div><h3><span data-k="card3h">Документи в чаті</span></h3><p><span data-k="card3p">КП, договори, презентації, PDF — прямо в чаті за секунди.</span></p><div class="out"><span data-k="card3out">→ 42 сек замість години</span></div></div>
+      <div class="card"><div class="ico">🔗</div><h3><span data-k="card4h">Інтеграція з CRM</span></h3><p><span data-k="card4p">Створює угоди, фіксує торкання, ставить задачі.</span></p><div class="out"><span data-k="card4out">→ CRM веде себе сама</span></div></div>
+      <div class="card"><div class="ico">📊</div><h3><span data-k="card5h">Дані й аналітика</span></h3><p><span data-k="card5p">Відповіді по прайсах і залишках, розбір реклами.</span></p><div class="out"><span data-k="card5out">→ рішення на цифрах</span></div></div>
+      <div class="card"><div class="ico">🧮</div><h3><span data-k="card6h">Розрахунки й пошта</span></h3><p><span data-k="card6p">Платежі, логістика, курси; розбір пошти.</span></p><div class="out"><span data-k="card6out">→ менше ручної роботи</span></div></div>
     </div>
-    <p style="text-align:center;margin-top:26px;font-size:15px">…та інше під ваш запит — розберу безкоштовно.</p>
+    <p style="text-align:center;margin-top:26px;font-size:15px"><span data-k="sol_more">…та інше під ваш запит — розберу безкоштовно.</span></p>
   </div>
 </section>
 
@@ -475,15 +480,15 @@
 <section id="formats">
   <div class="wrap">
     <div class="shead">
-      <span class="mono">Формати</span>
-      <h2 style="margin-top:14px">Що я можу зробити</h2>
-      <p style="margin-top:12px">Не лише боти. Берусь за будь-яку задачу по AI — у потрібному форматі.</p>
+      <span class="mono"><span data-k="w_formaty">Формати</span></span>
+      <h2 style="margin-top:14px"><span data-k="fmt_h2">Що я можу зробити</span></h2>
+      <p style="margin-top:12px"><span data-k="fmt_p">Не лише боти. Берусь за будь-яку задачу по AI — у потрібному форматі.</span></p>
     </div>
     <div class="formats">
-      <div class="fmt"><span class="e">🌐</span><h3>Сайт / лендинг</h3><p>Продавальний сайт з AI-механіками: квізи, чат-агент, персоналізація, збір лідів.</p></div>
-      <div class="fmt"><span class="e">💬</span><h3>Бот у месенджерах</h3><p>Нейро-співробітник у Telegram, Instagram, WhatsApp, Viber чи Facebook — де ваші клієнти: діалог, голос, фото, кнопки, оплати.</p></div>
-      <div class="fmt"><span class="e">⚙️</span><h3>Інтеграція в процеси</h3><p>AI у вашу CRM, таблиці, пошту, рекламу — автоматизуємо те, що зʼїдає час.</p></div>
-      <div class="fmt"><span class="e">🧩</span><h3>Будь-яка задача під ключ</h3><p>Є ідея чи «затик»? Опишіть у боті — запропоную рішення.</p></div>
+      <div class="fmt"><span class="e">🌐</span><h3><span data-k="fmt1h">Сайт / лендинг</span></h3><p><span data-k="fmt1p">Продавальний сайт з AI-механіками: квізи, чат-агент, персоналізація, збір лідів.</span></p></div>
+      <div class="fmt"><span class="e">💬</span><h3><span data-k="fmt2h">Бот у месенджерах</span></h3><p><span data-k="fmt2p">Нейро-співробітник у Telegram, Instagram, WhatsApp, Viber чи Facebook — де ваші клієнти: діалог, голос, фото, кнопки, оплати.</span></p></div>
+      <div class="fmt"><span class="e">⚙️</span><h3><span data-k="fmt3h">Інтеграція в процеси</span></h3><p><span data-k="fmt3p">AI у вашу CRM, таблиці, пошту, рекламу — автоматизуємо те, що зʼїдає час.</span></p></div>
+      <div class="fmt"><span class="e">🧩</span><h3><span data-k="fmt4h">Будь-яка задача під ключ</span></h3><p><span data-k="fmt4p">Є ідея чи «затик»? Опишіть у боті — запропоную рішення.</span></p></div>
     </div>
 
     <div class="memeband lav" style="margin-top:24px">
@@ -493,9 +498,9 @@
       </div>
       <div class="mb-text">
         <span class="mono" style="color:var(--pink)">Мій підхід</span>
-        <h2 style="margin:12px 0;font-size:clamp(26px,3.6vw,40px)">Жодна задача не «out of your league» 🥂</h2>
-        <p>Сайт, бот, інтеграція в CRM чи щось нове — опишіть у боті, придумаю рішення.</p>
-        <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg" style="margin-top:18px">Описати свою задачу →</a>
+        <h2 style="margin:12px 0;font-size:clamp(26px,3.6vw,40px)"><span data-k="mb2_h2">Жодна задача не «out of your league» 🥂</span></h2>
+        <p><span data-k="mb2_p">Сайт, бот, інтеграція в CRM чи щось нове — опишіть у боті, придумаю рішення.</span></p>
+        <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg" style="margin-top:18px"><span data-k="mb2_btn">Описати свою задачу →</span></a>
       </div>
     </div>
   </div>
@@ -505,15 +510,15 @@
 <section id="cases">
   <div class="wrap">
     <div class="shead">
-      <span class="mono">Результати</span>
-      <h2 style="margin-top:14px">Цифри, а не обіцянки</h2>
+      <span class="mono"><span data-k="cases_eyebrow">Результати</span></span>
+      <h2 style="margin-top:14px"><span data-k="cases_h2">Цифри, а не обіцянки</span></h2>
     </div>
     <div class="cases">
-      <div class="case"><div class="big">28ч</div><div class="who">Мережа послуг</div><div class="desc">Заощадили на тиждень на обробці заявок після запуску AI-асистента продажів.</div></div>
-      <div class="case"><div class="big">0,94<span class="cur">₴</span></div><div class="who">E-commerce</div><div class="desc">Вартість генерації однієї картки товару замість години роботи копірайтера.</div></div>
-      <div class="case"><div class="big">−30%</div><div class="who">B2B-компанія</div><div class="desc">Зниження навантаження на підтримку завдяки нейро-співробітнику першої лінії.</div></div>
+      <div class="case"><div class="big">28ч</div><div class="who"><span data-k="case1who">Мережа послуг</span></div><div class="desc"><span data-k="case1desc">Заощадили на тиждень на обробці заявок після запуску AI-асистента продажів.</span></div></div>
+      <div class="case"><div class="big">0,94<span class="cur">₴</span></div><div class="who">E-commerce</div><div class="desc"><span data-k="case2desc">Вартість генерації однієї картки товару замість години роботи копірайтера.</span></div></div>
+      <div class="case"><div class="big">−30%</div><div class="who"><span data-k="case3who">B2B-компанія</span></div><div class="desc"><span data-k="case3desc">Зниження навантаження на підтримку завдяки нейро-співробітнику першої лінії.</span></div></div>
     </div>
-    <p style="text-align:center;margin-top:22px;font-size:13px;color:var(--ink-3);font-family:'Fragment Mono',monospace">Орієнтовні результати впровадження — точні цифри під вашу нішу покажу на розборі.</p>
+    <p style="text-align:center;margin-top:22px;font-size:13px;color:var(--ink-3);font-family:'Fragment Mono',monospace"><span data-k="cases_note">Орієнтовні результати впровадження — точні цифри під вашу нішу покажу на розборі.</span></p>
   </div>
 </section>
 
@@ -526,10 +531,10 @@
         <span style="display:none">📸 assets/meme-coffee-dog.jpg</span>
       </div>
       <div class="mb-text">
-        <span class="mono" style="color:var(--green)">Мем у тему</span>
-        <h2 style="margin:12px 0;font-size:clamp(26px,3.6vw,40px)">Ти, поки нейро-співробітник розгрібає всю рутину ☕</h2>
-        <p>Нічні відповіді клієнтам, ручні таблиці, однотипні КП — цим тепер займається бот. А ти займаєшся бізнесом. Life happens — нейро-співробітник helps.</p>
-        <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg" style="margin-top:18px">Віддати рутину боту →</a>
+        <span class="mono" style="color:var(--green)"><span data-k="mem_eyebrow">Мем у тему</span></span>
+        <h2 style="margin:12px 0;font-size:clamp(26px,3.6vw,40px)"><span data-k="mb3_h2">Ти, поки нейро-співробітник розгрібає всю рутину ☕</span></h2>
+        <p><span data-k="mb3_p">Нічні відповіді клієнтам, ручні таблиці, однотипні КП — цим тепер займається бот. А ти займаєшся бізнесом. Life happens — нейро-співробітник helps.</span></p>
+        <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg" style="margin-top:18px"><span data-k="mb3_btn">Віддати рутину боту →</span></a>
       </div>
     </div>
   </div>
@@ -539,11 +544,11 @@
 <section id="about">
   <div class="wrap">
     <div class="personal">
-      <div class="pa-badge">👋 Привіт, я Євгенія</div>
-      <h2>Ви працюєте напряму зі мною — не з менеджерами</h2>
-      <p>Я не агентство з колл-центром і прошарком акаунтів. Сама проєктую, збираю і навчаю вашого AI-співробітника — від першого дзвінка до запуску.</p>
-      <p>Менше посередників — швидший результат і чесна розмова про те, що вам реально потрібно, а що ні.</p>
-      <div class="sign2">— Євгенія</div>
+      <div class="pa-badge"><span data-k="about_badge">👋 Привіт, я Євгенія</span></div>
+      <h2><span data-k="about_h2">Ви працюєте напряму зі мною — не з менеджерами</span></h2>
+      <p><span data-k="about_p1">Я не агентство з колл-центром і прошарком акаунтів. Сама проєктую, збираю і навчаю вашого AI-співробітника — від першого дзвінка до запуску.</span></p>
+      <p><span data-k="about_p2">Менше посередників — швидший результат і чесна розмова про те, що вам реально потрібно, а що ні.</span></p>
+      <div class="sign2"><span data-k="about_sign">— Євгенія</span></div>
     </div>
   </div>
 </section>
@@ -552,22 +557,22 @@
 <section id="process">
   <div class="wrap">
     <div class="shead">
-      <span class="mono">Як проходить робота</span>
-      <h2 style="margin-top:14px">Усе починається з брифу в Telegram</h2>
-      <p style="margin-top:12px">Бот одразу розпитає про задачу, а далі я доводжу проєкт до результату.</p>
+      <span class="mono"><span data-k="proc_eyebrow">Як проходить робота</span></span>
+      <h2 style="margin-top:14px"><span data-k="proc_h2">Усе починається з брифу в Telegram</span></h2>
+      <p style="margin-top:12px"><span data-k="proc_p">Бот одразу розпитає про задачу, а далі я доводжу проєкт до результату.</span></p>
     </div>
     <div class="steps5">
-      <div class="step"><div class="n serif">01</div><h3>Бриф у Telegram</h3><p>Бот одразу розпитує: чим займаєтесь, що за задача, де «болить». Можна голосом.</p><div class="t">2 хвилини</div></div>
-      <div class="step"><div class="n serif">02</div><h3>Дзвінок</h3><p>Зідзвонимось, обговоримо деталі, цілі й терміни.</p><div class="t">30–40 хв</div></div>
-      <div class="step"><div class="n serif">03</div><h3>Доступи й документація</h3><p>Даєте доступи під проєкт: CRM, база знань, процеси, дані — усе, що потрібно боту для роботи.</p><div class="t">за проєктом</div></div>
-      <div class="step"><div class="n serif">04</div><h3>Технічне налаштування</h3><p>Я налаштовую всю техчастину, щоб бот стабільно працював під вашу задачу.</p><div class="t">1–3 тижні</div></div>
-      <div class="step"><div class="n serif">05</div><h3>Навчаємо агента разом</h3><p>Донавчу на вашому процесі, щоб розумів вашу кухню.</p><div class="t">спільно</div></div>
+      <div class="step"><div class="n serif">01</div><h3><span data-k="step1h">Бриф у Telegram</span></h3><p><span data-k="step1p">Бот одразу розпитує: чим займаєтесь, що за задача, де «болить». Можна голосом.</span></p><div class="t"><span data-k="step1t">2 хвилини</span></div></div>
+      <div class="step"><div class="n serif">02</div><h3><span data-k="step2h">Дзвінок</span></h3><p><span data-k="step2p">Зідзвонимось, обговоримо деталі, цілі й терміни.</span></p><div class="t"><span data-k="step2t">30–40 хв</span></div></div>
+      <div class="step"><div class="n serif">03</div><h3><span data-k="step3h">Доступи й документація</span></h3><p><span data-k="step3p">Даєте доступи під проєкт: CRM, база знань, процеси, дані — усе, що потрібно боту для роботи.</span></p><div class="t"><span data-k="step3t">за проєктом</span></div></div>
+      <div class="step"><div class="n serif">04</div><h3><span data-k="step4h">Технічне налаштування</span></h3><p><span data-k="step4p">Я налаштовую всю техчастину, щоб бот стабільно працював під вашу задачу.</span></p><div class="t"><span data-k="step4t">1–3 тижні</span></div></div>
+      <div class="step"><div class="n serif">05</div><h3><span data-k="step5h">Навчаємо агента разом</span></h3><p><span data-k="step5p">Донавчу на вашому процесі, щоб розумів вашу кухню.</span></p><div class="t"><span data-k="step5t">спільно</span></div></div>
     </div>
     <div class="setupnote">
       <span class="e">🧠</span>
       <div>
-        <h3>Що означає «технічне налаштування» — беру на себе</h3>
-        <p>Підключаю памʼять, обробку помилок, запис у базу. Вам не потрібно кодити — лише доступи й знання про бізнес. Решта на мені.</p>
+        <h3><span data-k="setup_h3">Що означає «технічне налаштування» — беру на себе</span></h3>
+        <p><span data-k="setup_p">Підключаю памʼять, обробку помилок, запис у базу. Вам не потрібно кодити — лише доступи й знання про бізнес. Решта на мені.</span></p>
       </div>
     </div>
   </div>
@@ -577,46 +582,46 @@
 <section id="pricing">
   <div class="wrap">
     <div class="shead">
-      <span class="mono hl">Тарифи</span>
-      <h2 style="margin-top:14px">Прозорі пакети</h2>
-      <p style="margin-top:12px">Точна ціна — на безкоштовному розборі під ваш обсяг робіт.</p>
+      <span class="mono hl"><span data-k="w_tarify">Тарифи</span></span>
+      <h2 style="margin-top:14px"><span data-k="price_h2">Прозорі пакети</span></h2>
+      <p style="margin-top:12px"><span data-k="price_p">Точна ціна — на безкоштовному розборі під ваш обсяг робіт.</span></p>
     </div>
     <div class="prices">
       <div class="price">
-        <div class="name">Легкий агент</div>
-        <div class="amt">від $500</div>
-        <ul><li>1 процес під ключ</li><li>AI-асистент у Telegram</li><li>Навчання на ваших даних</li><li>🔒 Безпека даних і рольовий доступ</li><li>Запуск за 1–2 тижні</li></ul>
-        <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-ghost">Обрати</a>
+        <div class="name"><span data-k="p1name">Легкий агент</span></div>
+        <div class="amt"><span data-k="p1amt">від $500</span></div>
+        <ul><li><span data-k="p1li1">1 процес під ключ</span></li><li><span data-k="p1li2">AI-асистент у Telegram</span></li><li><span data-k="p1li3">Навчання на ваших даних</span></li><li><span data-k="p1li4">🔒 Безпека даних і рольовий доступ</span></li><li><span data-k="p1li5">Запуск за 1–2 тижні</span></li></ul>
+        <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-ghost"><span data-k="w_obrati">Обрати</span></a>
       </div>
       <div class="price pop">
-        <span class="tag">🔥 Хіт</span>
+        <span class="tag"><span data-k="p_hit">🔥 Хіт</span></span>
         <div class="name">Стандарт</div>
-        <div class="pick">★ Найкращий вибір</div>
-        <div class="amt">від $1&nbsp;500</div>
-        <ul><li class="inherit">Усе з «Легкого», плюс:</li><li>2–3 процеси</li><li>Інтеграція з CRM і даними</li><li>Генерація документів</li><li>Памʼять і рольовий доступ</li></ul>
-        <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-primary">Обрати</a>
+        <div class="pick"><span data-k="p2pick">★ Найкращий вибір</span></div>
+        <div class="amt"><span data-k="p2amt">від $1&nbsp;500</span></div>
+        <ul><li class="inherit"><span data-k="p2li1">Усе з «Легкого», плюс:</span></li><li><span data-k="p2li2">2–3 процеси</span></li><li><span data-k="p2li3">Інтеграція з CRM і даними</span></li><li><span data-k="p2li4">Генерація документів</span></li><li><span data-k="p2li5">Памʼять і рольовий доступ</span></li></ul>
+        <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-primary"><span data-k="w_obrati">Обрати</span></a>
       </div>
       <div class="price">
-        <div class="name">Бізнес / під ключ</div>
-        <div class="amt">від $3&nbsp;000</div>
-        <ul><li class="inherit">Усе зі «Стандарту», плюс:</li><li>Комплексне впровадження</li><li>🔒 Розширений захист + NDA</li><li>Самонавчання бота</li><li>Пріоритетний супровід</li></ul>
-        <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-ghost">Обрати</a>
+        <div class="name"><span data-k="p3name">Бізнес / під ключ</span></div>
+        <div class="amt"><span data-k="p3amt">від $3&nbsp;000</span></div>
+        <ul><li class="inherit"><span data-k="p3li1">Усе зі «Стандарту», плюс:</span></li><li><span data-k="p3li2">Комплексне впровадження</span></li><li><span data-k="p3li3">🔒 Розширений захист + NDA</span></li><li><span data-k="p3li4">Самонавчання бота</span></li><li><span data-k="p3li5">Пріоритетний супровід</span></li></ul>
+        <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-ghost"><span data-k="w_obrati">Обрати</span></a>
       </div>
     </div>
-    <div class="price-note"><span class="nb">🔒 Безпека, рольовий доступ і NDA — у КОЖНОМУ тарифі</span> · Ціна залежить від складності задачі · складні проєкти (телефонія, платежі)&nbsp;— індивідуально · <span class="nb">+ супровід від $100/міс</span> · <span class="nb">оплата $ / грн / USDT</span>. Точну ціну порахуємо на безкоштовному розборі.</div>
+    <div class="price-note" data-k="price_note"><span class="nb">🔒 Безпека, рольовий доступ і NDA — у КОЖНОМУ тарифі</span> · Ціна залежить від складності задачі · складні проєкти (телефонія, платежі)&nbsp;— індивідуально · <span class="nb">+ супровід від $100/міс</span> · <span class="nb">оплата $ / грн / USDT</span>. Точну ціну порахуємо на безкоштовному розборі.</div>
   </div>
 </section>
 
 <!-- FAQ -->
 <section id="faq">
   <div class="wrap">
-    <div class="shead"><span class="mono">Питання</span><h2 style="margin-top:14px">Часті питання</h2></div>
+    <div class="shead"><span class="mono"><span data-k="faq_eyebrow">Питання</span></span><h2 style="margin-top:14px"><span data-k="faq_h2">Часті питання</span></h2></div>
     <div class="faq">
-      <details class="q"><summary>Чим це відрізняється від звичайного чат-бота?</summary><div class="a">Звичайний бот — за жорстким сценарієм. Мій нейро-співробітник розуміє мову й голос, навчений на знаннях вашої компанії, памʼятає контекст і виконує дії: CRM, розрахунки, документи.</div></details>
-      <details class="q"><summary>А мої дані в безпеці?</summary><div class="a">Так. Рольовий доступ, підтвердження дій, захист від prompt-інʼєкцій. NDA обговоримо на старті.</div></details>
-      <details class="q"><summary>Скільки займає впровадження?</summary><div class="a">1–4 тижні. Перший результат побачите вже на тестуванні.</div></details>
-      <details class="q"><summary>Скільки це коштує?</summary><div class="a">Три пакети «від». Точну ціну порахую на безкоштовному розборі.</div></details>
-      <details class="q"><summary>А якщо не підійде?</summary><div class="a">Почнемо з безкоштовного розбору — зрозумієте цінність до старту. Не підійде — чесно скажу.</div></details>
+      <details class="q"><summary><span data-k="faq1q">Чим це відрізняється від звичайного чат-бота?</span></summary><div class="a"><span data-k="faq1a">Звичайний бот — за жорстким сценарієм. Мій нейро-співробітник розуміє мову й голос, навчений на знаннях вашої компанії, памʼятає контекст і виконує дії: CRM, розрахунки, документи.</span></div></details>
+      <details class="q"><summary><span data-k="faq2q">А мої дані в безпеці?</span></summary><div class="a"><span data-k="faq2a">Так. Рольовий доступ, підтвердження дій, захист від prompt-інʼєкцій. NDA обговоримо на старті.</span></div></details>
+      <details class="q"><summary><span data-k="faq3q">Скільки займає впровадження?</span></summary><div class="a"><span data-k="faq3a">1–4 тижні. Перший результат побачите вже на тестуванні.</span></div></details>
+      <details class="q"><summary><span data-k="faq4q">Скільки це коштує?</span></summary><div class="a"><span data-k="faq4a">Три пакети «від». Точну ціну порахую на безкоштовному розборі.</span></div></details>
+      <details class="q"><summary><span data-k="faq5q">А якщо не підійде?</span></summary><div class="a"><span data-k="faq5a">Почнемо з безкоштовного розбору — зрозумієте цінність до старту. Не підійде — чесно скажу.</span></div></details>
     </div>
   </div>
 </section>
@@ -625,37 +630,37 @@
 <section class="final">
   <div class="wrap">
     <div class="box">
-      <span class="mono">Почнемо?</span>
-      <h2 style="margin:16px 0">Запиши голосове — отримай <em>AI-розбір</em> свого бізнесу</h2>
-      <p style="max-width:48ch;margin:0 auto 28px">Розкажи, чим займаєшся і що «болить». За хвилину покажу, що автоматизувати і скільки це поверне.</p>
-      <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg btn-lg">🎤 Відкрити бота й записати →</a>
+      <span class="mono"><span data-k="final_eyebrow">Почнемо?</span></span>
+      <h2 style="margin:16px 0" data-k="final_h2">Запиши голосове — отримай <em>AI-розбір</em> свого бізнесу</h2>
+      <p style="max-width:48ch;margin:0 auto 28px"><span data-k="final_p">Розкажи, чим займаєшся і що «болить». За хвилину покажу, що автоматизувати і скільки це поверне.</span></p>
+      <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg btn-lg"><span data-k="final_btn">🎤 Відкрити бота й записати →</span></a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap foot-in">
-    <div>© 2026 · Євгенія · AI під ключ</div>
-    <div class="foot-links"><a href="https://t.me/ai_lifechanger_bot" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:vasiuta.yevhenia@gmail.com">Пошта</a> · <a href="privacy.html">Політика конфіденційності</a></div>
+    <div><span data-k="foot_copy">© 2026 · Євгенія · AI під ключ</span></div>
+    <div class="foot-links"><a href="https://t.me/ai_lifechanger_bot" target="_blank" rel="noopener">Telegram</a> · <a href="mailto:vasiuta.yevhenia@gmail.com"><span data-k="foot_mail">Пошта</span></a> · <a href="privacy.html"><span data-k="foot_priv">Політика конфіденційності</span></a></div>
   </div>
 </footer>
 
 <!-- STICKY -->
 <div class="sticky">
   <div class="wrap sticky-in">
-    <div class="txt">Розкажи про свій бізнес голосом <span>· AI відповість за хвилину</span></div>
-    <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg">🎤 Записати в Telegram</a>
+    <div class="txt" data-k="sticky_txt">Розкажи про свій бізнес голосом <span>· AI відповість за хвилину</span></div>
+    <a href="https://t.me/ai_lifechanger_bot" target="_blank" class="btn btn-tg"><span data-k="sticky_btn">🎤 Записати в Telegram</span></a>
   </div>
 </div>
 
 <!-- QUIZ MODAL STUB -->
 <div class="modal" id="quiz" onclick="if(event.target===this)closeQuiz()">
   <div class="m">
-    <span class="mono">Квіз-діагностика</span>
-    <h3>Тут відкриється квіз</h3>
-    <p>5 питань за 2 хвилини → персональний розрахунок. Або одразу запиши голосове — так швидше.</p>
-    <a href="https://t.me/ai_lifechanger_bot" class="btn btn-tg btn-lg" target="_blank">🎤 Пройти в Telegram-боті</a>
-    <div class="close" onclick="closeQuiz()">Закрити</div>
+    <span class="mono"><span data-k="modal_eyebrow">Квіз-діагностика</span></span>
+    <h3><span data-k="modal_h3">Тут відкриється квіз</span></h3>
+    <p><span data-k="modal_p">5 питань за 2 хвилини → персональний розрахунок. Або одразу запиши голосове — так швидше.</span></p>
+    <a href="https://t.me/ai_lifechanger_bot" class="btn btn-tg btn-lg" target="_blank"><span data-k="modal_btn">🎤 Пройти в Telegram-боті</span></a>
+    <div class="close" onclick="closeQuiz()"><span data-k="modal_close">Закрити</span></div>
   </div>
 </div>
 
@@ -681,6 +686,27 @@
     },{rootMargin:'0px 0px -10% 0px'}).observe(fin);
   })();
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeQuiz()});
+</script>
+<script>
+(function(){
+  var I18N_RU = {"nav_tg": "Открыть в Telegram", "logo": "AI&nbsp;под&nbsp;ключ", "hero_h1": "AI-сотрудник, который работает <em>24/7</em> и не увольняется", "final_h2": "Запиши голосовое — получи <em>AI-разбор</em> своего бизнеса", "sticky_txt": "Расскажи о своём бизнесе голосом <span>· AI ответит за минуту</span>", "price_note": "<span class=\"nb\">🔒 Безопасность, ролевой доступ и NDA — в КАЖДОМ тарифе</span> · Цена зависит от сложности задачи · сложные проекты (телефония, платежи)&nbsp;— индивидуально · <span class=\"nb\">+ сопровождение от $100/мес</span> · <span class=\"nb\">оплата $ / грн / USDT</span>. Точную цену посчитаем на бесплатном разборе.", "nav_try": "Попробовать", "nav_solutions": "Возможности", "nav_process": "Как работаем", "badge1": "🤖 Нейро-сотрудники", "badge2": "⚡ Запуск за 2–4 недели", "hero_sub": "Отвечает клиентам, продаёт, ведёт CRM. Я, Евгения, внедрю его в ваш бизнес за 2–4 недели — от $500.", "cta1": "🎤 Записать голосовое о своём бизнесе →", "cta2": "Посчитать экономию", "microtrust": "Бесплатно · ответ за минуту · прямо в Telegram", "vh_h3": "Расскажи о своём бизнесе — голосом", "vh_p": "Запиши голосовое: чем занимаешься и что «болит». AI сразу скажет, что автоматизировать. Дальше подключусь я.", "vh_btn": "Надиктовать в Telegram →", "vh_note": "Откроется бот — там надиктуешь голосовое и сразу получишь разбор 💬", "stat1cap": "бот работает без выходных и обедов", "stat2cap": "средний ответ клиенту", "stat3cap": "нагрузки на вас", "stat4cap": "недели до запуска", "highlight_b": "Запуск за 2–4 недели", "highlight_span": "Чёткий срок под ключ — без бесконечных «ещё чуть-чуть».", "try_eyebrow": "Попробуй прямо сейчас", "try_h2": "Не читай про AI — прикоснись к нему в Telegram", "try_p": "Зайди в бота и дай агенту реальную задачу. Он ответит за секунды — это и есть демо того, что будет работать у тебя.", "tc1h": "Запиши голосовое", "tc1p": "Расскажи задачу голосом — получи развёрнутый ответ текстом.", "tc2h": "Попроси анализ рынка", "tc2p": "Назови нишу — бот соберёт разбор и точки роста.", "tc3h": "Пришли фото", "tc3p": "Скинь товар, документ или скрин — получи помощь по нему.", "tc4h": "Опиши свой затык", "tc4p": "Расскажи, что «болит» в бизнесе — бот скажет, что автоматизировать.", "try_btn": "Открыть бота и попробовать →", "signs_eyebrow": "Диагностика", "signs_h2": "5 признаков, что вам пора внедрять AI", "sign1": "Рутина съедает весь ваш день", "sign2": "Лиды теряются: медленный ответ, нет follow-up", "sign3": "Поддержка и колл-центр перегружены", "sign4": "Менеджеры заняты рутиной вместо продаж", "sign5": "Конкуренты уже внедряют AI, а вы — ещё нет", "sign_win": "Узнали себя? Запишите голосовое — за минуту скажу, что автоматизировать →", "mb1_h2": "Ваша реакция, когда посчитали, сколько часов съедает рутина", "mb1_p": "Ручные ответы, КП, отчёты по ночам. Сначала так реагируешь — потом отдаёшь это боту.", "mb1_btn": "Посчитать мою рутину →", "sol_eyebrow": "Что я делаю", "sol_h2": "Нейро-сотрудники под реальные задачи", "sol_p": "Конкретные процессы, которые уже работают у моих клиентов.", "card1h": "AI-ассистент продаж", "card1p": "Отвечает 24/7, квалифицирует и не теряет лиды.", "card1out": "→ ответ за 15 сек", "card2h": "Нейро-поддержка", "card2p": "Закрывает обращения сама, сложное — передаёт человеку.", "card2out": "→ −70% рутины", "card3h": "Документы в чате", "card3p": "КП, договоры, презентации, PDF — прямо в чате за секунды.", "card3out": "→ 42 сек вместо часа", "card4h": "Интеграция с CRM", "card4p": "Создаёт сделки, фиксирует касания, ставит задачи.", "card4out": "→ CRM ведёт себя сама", "card5h": "Данные и аналитика", "card5p": "Ответы по прайсам и остаткам, разбор рекламы.", "card5out": "→ решения на цифрах", "card6h": "Расчёты и почта", "card6p": "Платежи, логистика, курсы; разбор почты.", "card6out": "→ меньше ручной работы", "sol_more": "…и другое под ваш запрос — разберу бесплатно.", "fmt_h2": "Что я могу сделать", "fmt_p": "Не только боты. Берусь за любую задачу по AI — в нужном формате.", "fmt1h": "Сайт / лендинг", "fmt1p": "Продающий сайт с AI-механиками: квизы, чат-агент, персонализация, сбор лидов.", "fmt2h": "Бот в мессенджерах", "fmt2p": "Нейро-сотрудник в Telegram, Instagram, WhatsApp, Viber или Facebook — где ваши клиенты: диалог, голос, фото, кнопки, оплаты.", "fmt3h": "Интеграция в процессы", "fmt3p": "AI в вашу CRM, таблицы, почту, рекламу — автоматизируем то, что съедает время.", "fmt4h": "Любая задача под ключ", "fmt4p": "Есть идея или «затык»? Опишите в боте — предложу решение.", "mb2_h2": "Ни одна задача не «out of your league» 🥂", "mb2_p": "Сайт, бот, интеграция в CRM или что-то новое — опишите в боте, придумаю решение.", "mb2_btn": "Описать свою задачу →", "cases_eyebrow": "Результаты", "cases_h2": "Цифры, а не обещания", "case1who": "Сеть услуг", "case1desc": "Сэкономили в неделю на обработке заявок после запуска AI-ассистента продаж.", "case2desc": "Стоимость генерации одной карточки товара вместо часа работы копирайтера.", "case3who": "B2B-компания", "case3desc": "Снижение нагрузки на поддержку благодаря нейро-сотруднику первой линии.", "cases_note": "Ориентировочные результаты внедрения — точные цифры под вашу нишу покажу на разборе.", "mb3_h2": "Ты, пока нейро-сотрудник разгребает всю рутину ☕", "mb3_p": "Ночные ответы клиентам, ручные таблицы, однотипные КП — этим теперь занимается бот. А ты занимаешься бизнесом. Life happens — нейро-сотрудник helps.", "mb3_btn": "Отдать рутину боту →", "about_badge": "👋 Привет, я Евгения", "about_h2": "Вы работаете напрямую со мной — не с менеджерами", "about_p1": "Я не агентство с колл-центром и прослойкой аккаунтов. Сама проектирую, собираю и обучаю вашего AI-сотрудника — от первого звонка до запуска.", "about_p2": "Меньше посредников — быстрее результат и честный разговор о том, что вам реально нужно, а что нет.", "about_sign": "— Евгения", "proc_eyebrow": "Как проходит работа", "proc_h2": "Всё начинается с брифа в Telegram", "proc_p": "Бот сразу расспросит о задаче, а дальше я довожу проект до результата.", "step1h": "Бриф в Telegram", "step1p": "Бот сразу расспрашивает: чем занимаетесь, что за задача, где «болит». Можно голосом.", "step1t": "2 минуты", "step2h": "Звонок", "step2p": "Созвонимся, обсудим детали, цели и сроки.", "step2t": "30–40 мин", "step3h": "Доступы и документация", "step3p": "Даёте доступы под проект: CRM, база знаний, процессы, данные — всё, что нужно боту для работы.", "step3t": "по проекту", "step4h": "Техническая настройка", "step4p": "Я настраиваю всю техчасть, чтобы бот стабильно работал под вашу задачу.", "step4t": "1–3 недели", "step5h": "Обучаем агента вместе", "step5p": "Дообучу на вашем процессе, чтобы понимал вашу кухню.", "step5t": "совместно", "setup_h3": "Что означает «техническая настройка» — беру на себя", "setup_p": "Подключаю память, обработку ошибок, запись в базу. Вам не нужно кодить — только доступы и знания о бизнесе. Остальное на мне.", "price_h2": "Прозрачные пакеты", "price_p": "Точная цена — на бесплатном разборе под ваш объём работ.", "p1name": "Лёгкий агент", "p1amt": "от $500", "p1li1": "1 процесс под ключ", "p1li2": "AI-ассистент в Telegram", "p1li3": "Обучение на ваших данных", "p1li4": "🔒 Безопасность данных и ролевой доступ", "p1li5": "Запуск за 1–2 недели", "p_hit": "🔥 Хит", "p2pick": "★ Лучший выбор", "p2amt": "от $1&nbsp;500", "p2li1": "Всё из «Лёгкого», плюс:", "p2li2": "2–3 процесса", "p2li3": "Интеграция с CRM и данными", "p2li4": "Генерация документов", "p2li5": "Память и ролевой доступ", "p3name": "Бизнес / под ключ", "p3amt": "от $3&nbsp;000", "p3li1": "Всё из «Стандарта», плюс:", "p3li2": "Комплексное внедрение", "p3li3": "🔒 Расширенная защита + NDA", "p3li4": "Самообучение бота", "p3li5": "Приоритетное сопровождение", "faq_eyebrow": "Вопросы", "faq_h2": "Частые вопросы", "faq1q": "Чем это отличается от обычного чат-бота?", "faq1a": "Обычный бот — по жёсткому сценарию. Мой нейро-сотрудник понимает язык и голос, обучен на знаниях вашей компании, помнит контекст и выполняет действия: CRM, расчёты, документы.", "faq2q": "А мои данные в безопасности?", "faq2a": "Да. Ролевой доступ, подтверждение действий, защита от prompt-инъекций. NDA обсудим на старте.", "faq3q": "Сколько занимает внедрение?", "faq3a": "1–4 недели. Первый результат увидите уже на тестировании.", "faq4q": "Сколько это стоит?", "faq4a": "Три пакета «от». Точную цену посчитаю на бесплатном разборе.", "faq5q": "А если не подойдёт?", "faq5a": "Начнём с бесплатного разбора — поймёте ценность до старта. Не подойдёт — честно скажу.", "final_eyebrow": "Начнём?", "final_p": "Расскажи, чем занимаешься и что «болит». За минуту покажу, что автоматизировать и сколько это вернёт.", "final_btn": "🎤 Открыть бота и записать →", "foot_copy": "© 2026 · Евгения · AI под ключ", "foot_mail": "Почта", "foot_priv": "Политика конфиденциальности", "sticky_btn": "🎤 Записать в Telegram", "modal_eyebrow": "Квиз-диагностика", "modal_h3": "Здесь откроется квиз", "modal_p": "5 вопросов за 2 минуты → персональный расчёт. Или сразу запиши голосовое — так быстрее.", "modal_btn": "🎤 Пройти в Telegram-боте", "modal_close": "Закрыть", "w_formaty": "Форматы", "w_tarify": "Тарифы", "mem_eyebrow": "Мем в тему", "w_obrati": "Выбрать"};
+  var TITLE = {"ua": "Впровадження AI в бізнес — AI-співробітник під ключ | Євгенія", "ru": "Внедрение AI в бизнес — AI-сотрудник под ключ | Евгения"};
+  var nodes = document.querySelectorAll('[data-k]');
+  nodes.forEach(function(el){ el.setAttribute('data-ua-html', el.innerHTML); });
+  window.setLang = function(l){
+    document.querySelectorAll('[data-k]').forEach(function(el){
+      var k = el.getAttribute('data-k');
+      if(l==='ru'){ if(I18N_RU[k]!=null) el.innerHTML = I18N_RU[k]; }
+      else { var u = el.getAttribute('data-ua-html'); if(u!=null) el.innerHTML = u; }
+    });
+    document.documentElement.lang = (l==='ru') ? 'ru' : 'uk';
+    if(TITLE[l]) document.title = TITLE[l];
+    document.querySelectorAll('.langsw button').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-lang')===l); });
+    try{ localStorage.setItem('eva_lang', l); }catch(e){}
+  };
+  var saved='ua'; try{ saved = localStorage.getItem('eva_lang') || 'ua'; }catch(e){}
+  window.setLang(saved==='ru' ? 'ru' : 'ua');
+})();
 </script>
 </body>
 </html>
