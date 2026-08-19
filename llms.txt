@@ -1,0 +1,35 @@
+# lifechanger — AI automation for business (Ukraine)
+
+> Yevheniia builds turnkey AI employees for small and medium businesses: agents
+> that answer customers 24/7 in Telegram, Instagram and WhatsApp, sell, update
+> the CRM and draft documents. Packages from $500 one-time, launch in 1–2 weeks,
+> optional + support from $100/mo. Free discovery call runs inside the Telegram
+> bot. Site languages: Ukrainian (default), Russian, English.
+
+Prices below are one-time implementation fees in USD; the support plan is the
+only recurring item. Exact quotes are given after a free discovery session.
+Content updated 2026-08-13.
+
+## Pages
+
+- [Home — Ukrainian](https://ai-lifechanger.com/): services, pricing, agent builder, FAQ
+- [Home — Russian](https://ai-lifechanger.com/ru/): the same page in Russian
+- [Home — English](https://ai-lifechanger.com/en/): the same page in English
+
+## Services
+
+- [AI assistant in messengers](https://ai-lifechanger.com/en/#formats): answers customers 24/7 in Telegram, Instagram and WhatsApp, qualifies leads and books calls
+- [Sales and CRM automation](https://ai-lifechanger.com/en/#solutions): the agent sells, records deals in the CRM and reports to the owner daily
+- [Documents and quotes](https://ai-lifechanger.com/en/#solutions): proposals, invoices and contracts generated from a chat conversation
+- [Pricing](https://ai-lifechanger.com/en/#pricing): Light from $500 · Standard from $1,500 · Business from $3,000, one-time; + support from $100/mo
+- [Agent builder](https://ai-lifechanger.com/en/#configurator): pick a package and add-ons, see the total and the payback period
+- [Delivery process](https://ai-lifechanger.com/en/#process): five steps from discovery to launch, 1–4 weeks depending on scope
+
+## Optional
+
+- [FAQ](https://ai-lifechanger.com/en/#faq): scope, timelines, data handling, what happens after launch
+- [Guarantee](https://ai-lifechanger.com/en/#guarantee): what is fixed free of charge after delivery
+- [Client cases](https://ai-lifechanger.com/en/#cases): what was automated and what changed
+- [Telegram bot](https://t.me/ai_lifechanger_bot): free business analysis, the only entry point for enquiries
+- [Privacy Policy](https://ai-lifechanger.com/en/privacy.html): what data the site collects
+- [Terms of Use](https://ai-lifechanger.com/en/terms.html): terms of the site and the bot

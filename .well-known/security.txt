@@ -1,0 +1,5 @@
+# ai-lifechanger.com — RFC 9116
+Contact: mailto:vasiuta.yevhenia@gmail.com
+Expires: 2027-08-13T00:00:00.000Z
+Preferred-Languages: uk, ru, en
+Canonical: https://ai-lifechanger.com/.well-known/security.txt

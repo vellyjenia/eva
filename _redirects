@@ -1,0 +1,18 @@
+# Короткие ссылки для печати и офлайна. Копируется сборщиком в site/_redirects.
+# Работает на Netlify; на GitHub Pages редиректов нет — там эти адреса не живут.
+#
+# Зачем: на визитке и флаере длинный адрес с метками не напечатать, а сокращатели
+# вроде bit.ly Google прямо называет причиной потери источника — часть из них
+# срезает referrer, и переход становится «прямым».
+#
+# 301 — постоянный: поисковик проходит насквозь и берёт целевую страницу как
+# каноническую, сама короткая ссылка отдельной страницей в индекс не попадает.
+# Восклицательный знак — «редиректить даже если файл по этому пути существует».
+#
+# Метки менять можно, адреса — нет: они уже напечатаны.
+
+/go/ig    /?utm_source=instagram&utm_medium=social&utm_campaign=bio_permanent&utm_content=bio_link   301!
+/go/tg    /?utm_source=t.me&utm_medium=social&utm_campaign=bio_permanent&utm_content=channel         301!
+/go/yt    /?utm_source=youtube&utm_medium=video&utm_campaign=bio_permanent&utm_content=desc          301!
+/go/tt    /?utm_source=tiktok&utm_medium=social&utm_campaign=bio_permanent&utm_content=bio_link      301!
+/go/qr    /?utm_source=qr_vizitka&utm_medium=offline&utm_campaign=vizitki_2026                       301!

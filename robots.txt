@@ -1,0 +1,35 @@
+# ai-lifechanger.com — robots.txt
+# Генерируется tools-site/build.mjs. Руками не править.
+#
+# Сайт открыт целиком: и поисковикам, и AI-ассистентам. Ничего не закрываем —
+# попадание в ответы ChatGPT, Claude и Perplexity зависит именно от доступа их
+# поисковых ботов (OAI-SearchBot, Claude-SearchBot, PerplexityBot). Anthropic прямо
+# предупреждает, что блокировка Claude-SearchBot снижает видимость сайта в ответах.
+#
+# Групп по именам ботов здесь нет намеренно: по RFC 9309 бот подчиняется ровно одной
+# группе — своей, если она есть, иначе «*». Заведя именную группу, мы бы отключили
+# для этого бота все будущие правила из «*».
+
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+Sitemap: https://ai-lifechanger.com/sitemap.xml
+
+# Content-Signal — конвенция Cloudflare (contentsignals.org, CC0), не стандарт IETF:
+# заявление о том, что можно делать с контентом ПОСЛЕ загрузки, доступ оно не меняет.
+#   search   — индексировать, показывать ссылки и выдержки
+#   ai-input — подставлять в модель на лету (RAG, grounding, ответы ассистентов)
+#   ai-train — обучать и дообучать модели
+# Кто про эту строку не знает, тот обязан её проигнорировать (RFC 9309).
+#
+# Справочно — кто к нам ходит и зачем:
+#   обучение моделей: GPTBot, ClaudeBot, Google-Extended, Applebot-Extended,
+#     meta-externalagent, MistralAI-Training, Amazonbot, CCBot, Bytespider
+#   индексация для поиска и AI-ответов (отсюда цитаты и переходы): Googlebot,
+#     bingbot, OAI-SearchBot, Claude-SearchBot, PerplexityBot, MistralAI-Index,
+#     meta-webindexer, Applebot, DuckAssistBot
+#   живой фетч по запросу человека (robots.txt соблюдается не всегда — так заявлено
+#     у OpenAI, Perplexity, Meta и Google): ChatGPT-User, Claude-User,
+#     Perplexity-User, MistralAI-User, meta-externalfetcher, Google-Agent,
+#     Google-GeminiNotebook

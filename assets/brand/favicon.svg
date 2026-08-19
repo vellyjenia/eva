@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<style>.h{fill:#121212}.e{fill:#fff}@media(prefers-color-scheme:dark){.h{fill:#fff}.e{fill:#121212}}</style>
+<path class="h" d="M5 35 a27 26 0 1 0 54 0 a27 22 0 0 0 -54 0 Z"/>
+<circle class="e" cx="21.5" cy="40" r="6"/><circle class="e" cx="42.5" cy="40" r="6"/>
+</svg>
